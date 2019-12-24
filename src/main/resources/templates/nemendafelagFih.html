@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html xmlns:th="http://www.w3.org/1999/xhtml" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FÍH</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-4/css/bootstrap.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="css/bootstrap/bootstrap-4/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <!-- NavBar -->
+    <div th:insert="/header.html :: header">
+
+    </div>
+    <!-- /Navbar -->
+    <section id="FIH-sax-header">
+        <div class="">
+            <img id="FIH-saxheim-image" src="img/Sax_heim.jpg">
+        </div>
+    </section>
+
+
+    <!-- Content-->
+    <div class="container ">
+        <div class="row m-5" style="background-color: #FEB95F !important; opacity: 80%;">
+            <div class=" col-md-7 m-5">
+                <h1 class="">Nemendafélag FÍH</h1>
+                <br>
+                <h4>Nemendafélag FÍH skipa:</h4>
+
+                <p><strong>Formaður: </strong>Björg Blöndal</p>
+                <p><strong>Gjaldkeri: </strong>Salóme Morávek</p>
+                <p><strong>Ritari: </strong>Hrafnhildur Magnea Ingólfsdóttir</p>
+                <p><strong>Meðstjórnandi: </strong>Bergrós Halla Gunnarsdóttir</p>
+                <p><strong>Meðstjórnandi: </strong>Freyja Gunnarsdóttir</p>
+
+
+
+            </div>
+
+
+
+        </div>
+    </div>
+    <hr>
+    <!-- /Content-->
+
+    <!-- Footer -->
+    <div th:insert="/footer.html :: footer">
+
+    </div>
+
+    <!-- /Footer-->
+
+    <script src="js/main.js " async defer></script>
+</body>
+
+</html>

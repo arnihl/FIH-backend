@@ -1,0 +1,58 @@
+<!DOCTYPE html >
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Áfangar</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap-4/css/bootstrap.css" th:src="@{/css/bootstrap/bootstrap-4/css/bootstrap.css}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+<a href="/fih-admin">Til baka</a>
+<a href="/fih-admin/afangar/add">Bæta við Áfanga</a>
+<!--/*@thymesVar id="courses" type="is.tonlistarskolifih.TonlistarskoliFIH.Entity"*/-->
+<div th:switch="${courses}">
+    <div th:case="null">
+        <h2>Engir áfangar skráðir</h2>
+    </div>
+    <div th:case="*">
+        <h2>Áfangar</h2>
+        <div th:each="course : ${courses}" class="container-fluid">
+            <div class="row">
+
+                <div class="col">
+                    <h4>Nafn Áfanga</h4>
+                    <p th:text="${course.name}"></p>
+                    <h4>Tími</h4>
+                    <p th:text="${course.time}"></p>
+                    <h4>Staður</h4>
+                    <p th:text="${course.place}"></p>
+                    <h4>Skóli</h4>
+                    <p th:text="${course.school}"></p>
+                    <h4>Dagur</h4>
+                    <p th:text="${course.day}"></p>
+                    <h4>Kennari</h4>
+                    <p th:text="${course.teacher.name}"></p>
+                    <h4>Forkröfur</h4>
+                    <p th:text="${course.preRequirements}"></p>
+                    <a th:href="@{${'/fih-admin/afangar/change/' + course.id}}">Breyta Áfanga</a>
+
+                </div>
+
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

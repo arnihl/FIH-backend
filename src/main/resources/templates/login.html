@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-4/css/bootstrap.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+</head>
+<body>
+<div th:insert="/header.html :: header">
+
+</div>
+    <!-- /Nav bar -->
+    <!--/*@thymesVar id="user" type="is.tonlistarskolifih.TonlistarskoliFIH.Entity.User"*/-->
+    <!--/*@thymesVar id="name" type="String"*/-->
+    <!--/*@thymesVar id="password" type="String"*/-->
+    <form method="post" action="#" th:action="@{/fih-admin}" th:object="${user}" >
+        <input type="text" th:field="*{name}" placeholder="Username" id="name">
+        <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+        <input type="password" th:field="*{password}" placeholder="Password" id="password">
+        <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+        <input value="Login" type="submit">
+    </form>
+    <script src="js/main.js" async defer></script>
+
+
+<!-- footer -->
+<div th:insert="/footer.html :: footer" class="fixed-bottom">
+
+</div>
+<!-- /footer -->
+</body>
+</html>

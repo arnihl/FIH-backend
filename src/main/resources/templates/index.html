@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FÍH</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-4/css/bootstrap.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body class="FIH-forsida-body">
+    <!-- Nav Bar -->
+    <div th:insert="/header.html :: header">
+
+    </div>
+    <!--/nav bar -->
+    <section id="FIH-content">
+        <div style="height: 300px; background-color: #000000; margin-top: 42%; padding: 0%;" id="FIH-container">
+
+            <div class="container-fluid h-100">
+                <div class="row justify-content-start h-100">
+                    <div class="col-md-7 col-sm-12 text-white " style="padding-top: 5%; padding-left: 5%; padding-right: 5%;">
+                        <h1>Tónlistarskóli FÍH</h1>
+                        <p>Tónlistarskóli FÍH hefur mikla sérstöðu meðal tónlistarskóla landsins. Hann býður upp á hefðbundið tónlistarnám auk kennslu í rytmískri tónlist (djass, popp og rokk). </p>
+                    </div>
+                    <div class="col-md-5 col-sm-12 bg-white" style="padding-top: 5%; padding-left: 5%; margin-bottom: 0%;">
+                        <h2 style="margin-bottom: 4%;">Vilt þú skrá þig í tónlistarnám hjá okkur?</h2>
+                        <span class="border" style="margin-top: 0%; padding: 3%;"><a href="/umsoknir" class="btn btn-white" role="button"><strong>Sækja um</strong></a></span>
+                        <span class="border" style="margin-top: 0%; padding: 3%;"><a href="/algengarspurningar" class="btn btn-white" role="button"><strong>Algengar spurningar</strong></a></span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Bóklegar greinar tafla-->
+        <section class="FIH-boklegar-greinar text-white" style="background-color: #0D1321; opacity: 0.8;">
+            <div class="container-fluid p-4 " style="opacity: 1;">
+                <div class="row justify-content-center align-items-center ">
+                    <div class="col-md-3 col-sm-12 p-5">
+                        <h2>Áfangar MÍT: </h2>
+                        <p>Áfangar MÍT kenndir í Rauðagerði 27 og forkröfur fyrir þá: nemendur FÍH hafa aðgang að bóklegum fögum MÍT ef þeir hafa forkröfur og pláss leyfir. nemendur mæta í þau bóklegu fög sem þeir ætla að vera í.</p>
+                    </div>
+                    <div class="col-md-9 col-sm-12 ">
+                        <h2>Bóklegar greinar FÍH</h2>
+                        <table class="table table-hover text-white">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Áfangar</th>
+                                    <th scope="col">Tímasetningar</th>
+                                    <th scope="col">Salur</th>
+                                    <th scope="col">Dagur</th>
+                                    <th scope="col">Kennari</th>
+                                    <th scope="col">Forkröfur</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="afangi : ${fihafangar}">
+                                    <th scope="row" th:text="${afangi.name}"></th>
+                                    <td th:text="${afangi.time}"></td>
+                                    <td th:text="${afangi.place}"></td>
+                                    <td th:text="${afangi.day}"></td>
+                                    <td><a th:href="@{${'/kennarar/'}}" th:text="${afangi.teacher.abbreviation}"> </a></td>
+                                    <td th:text="${afangi.preRequirements}"></td>
+                                </tr>
+
+                                <tr>
+                                    <td></td>
+                                    <td colspan="4"><strong>Áfangar MÍT, Rauðagerði 27 og forkröfur fyrir þá:</strong> </td>
+                                    <td></td>
+
+                                </tr>
+                                <tr th:each="afangi : ${mitafangar}">
+                                    <th scope="row" th:text="${afangi.name}"></th>
+                                    <td th:text="${afangi.time}"></td>
+                                    <td th:text="${afangi.place}"></td>
+                                    <td th:text="${afangi.day}"></td>
+                                    <td>
+                                        <a href="/kennarar" th:text="${afangi.teacher.abbreviation}">K.E.</a>
+                                    </td>
+                                    <td th:text="${afangi.preRequirements}"></td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /Bóklegar greinar tafla-->
+
+        <!-- fréttir section-->
+        <div id="FIH-frettir-container" class="bg-white" style="padding-top: 2%; ">
+            <div class="line"></div>
+            <div class="d-flex justify-content-center" style="padding-top: 0%;">
+
+                <h1>Á Döfinni</h1>
+            </div>
+            <div class="line"></div>
+            <div class="row justify-content-around" style="margin-top: 2%; padding: 5%; ">
+                <div class="col-lg-4 col-md-6 col-sm-8 d-flex align-items-stretch mb-2" th:each="story : ${stories}" >
+                    <!--Card-->
+                    <a href="/adofinni">
+                        <div class="card" style="width: 100%;" >
+
+                            <!--Card image-->
+                            <div class="view">
+                                <img th:src="@{${'/img/' + story.imgRef}}" class="card-img-top" alt="photo" style="width: 100%; height: 15vw; object-fit: cover;">
+                                <a href="/adofinni">
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+
+                            <!--Card content-->
+                            <div class="card-body">
+                                <!--Title-->
+                                <a href="/adofinni" role="button" class="btn btn-white text-start">
+                                    <h4 class="card-title" th:text="${story.title}"></h4>
+                                    <p th:text="${#dates.format(story.timestamp, 'dd-MMM-yyyy')}"></p>
+                                </a>
+                                <!--Text-->
+                                <p class="card-text" th:text="${story.content}"> </p>
+
+                            </div>
+
+                        </div>
+                    </a>
+                    <!--/.Card-->
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+
+
+
+    </section>
+
+
+
+    <!-- Footer -->
+    <div th:insert="/footer.html :: footer">
+
+    </div>
+    <!-- /Footer-->
+
+    <script th:src="@{/js/main.js}" async defer></script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FÍH</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/css/bootstrap/bootstrap-4/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/css/stylesheet.css}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body class="FIH-Kennari-body">
+    <!-- Nav Bar -->
+    <div th:insert="/header.html :: header">
+
+    </div>
+    <!-- /Navbar -->
+
+
+    <!-- Content-->
+    <section id="FIH-kennari-content">
+        <div class="container-fluid " style="background: #0D1321">
+            <div class="row p-3">
+                <div class="col-lg-3 col-sm-6">
+                    <img th:src="@{${'/img/' + teacher.teacher.imgRef}}" th:alt="${teacher.teacher.name}" class="img-thumbnail">
+                </div>
+                <div class="col-lg-5 col-sm-6 text-white justify-content-start align-text-center">
+                    <h1 th:text="${teacher.teacher.name}"></h1>
+                    <p th:text="${teacher.teacher.description}" style="white-space: normal !important;"></p>
+                    <strong>Netfang: </strong>
+                    <p th:text="${teacher.teacher.email}">allat@simnet.is</p>
+                    <strong>Símanúmer: </strong>
+                    <p th:text="${teacher.teacher.phoneNumber}"></p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- /Content-->
+
+    <!-- Footer -->
+    <div th:insert="/footer.html :: footer">
+
+    </div>
+
+    <!-- /Footer-->
+
+    <script th:src="@{/js/main.js}" async defer></script>
+</body>
+
+</html>

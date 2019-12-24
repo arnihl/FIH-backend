@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bæta við kennara</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap/bootstrap-4/css/bootstrap.css}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+<!--/*@thymesVar id="teacher" type=""*/-->
+<a href="/fih-admin/kennarar" class="btn border border-dark" role="button">Til baka</a>
+<a class="btn border border-dark" role="button" th:href="@{${'/fih-admin/kennarar/delete/' + teacher2.id}}">Eyða kennara</a>
+
+<div class="container-fluid m-5">
+    <div class="row ">
+            <div class="col">
+                <form action="#" th:action="@{${'/fih-admin/kennarar/change/' + teacher2.id}}" th:object="${teacher}" enctype="multipart/form-data" method="post">
+
+                <div class="form-group">
+                    <label for="name">Nafn</label>
+                    <input class="form-control" type="text" th:field="*{name}" id="name" placeholder="Nafn">
+                    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+                </div>
+                <div class="form-group">
+                    <label for="abbreviation">Skammstöfun</label>
+                    <input class="form-control" type="text" th:field="*{abbreviation}" id="abbreviation" placeholder="Skammstöfun">
+                    <span th:if="${#fields.hasErrors('abbreviation')}" th:errors="*{abbreviation}"></span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input class="form-control" type="text" th:field="*{email}" id="email" placeholder="Email">
+                    <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+
+                </div>
+                <div class="form-group">
+                    <label for="phoneNumber">Símanúmer</label>
+                    <input class="form-control" type="text" th:field="*{phoneNumber}" id="phoneNumber" placeholder="Símanúmer">
+                    <span th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></span>
+                </div>
+                <div class="form-group">
+                    <label for="description">Lýsing á kennara</label>
+                    <textarea class=" form-control" type="text" th:field="*{description}" id="description" placeholder="Lýsing" rows="10"></textarea>
+                    <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
+                </div>
+                <div class="form-group">
+                    <label for="profession">Starfsgrein</label>
+                    <input class="form-control" type="text" th:field="*{profession}" id="profession" placeholder="Starfsgrein">
+                    <span th:if="${#fields.hasErrors('profession')}" th:errors="*{profession}"></span>
+                </div>
+                <div class="form-group">
+                    <label for="img">Mynd</label>
+                    <input class="form-control-file" type="file" th:field="*{img}" id="img" placeholder="Mynd">
+                    <span th:if="${#fields.hasErrors('img')}" th:errors="*{img}"></span>
+                </div>
+                <input type="submit" value="Breyta kennara">
+                </form>
+            </div>
+            <div class="col">
+                <p th:text="${teacher2.teacher.imgRef}"></p>
+                <img class="rounded" th:src="@{${'/img/' + teacher2.teacher.imgRef}}" style="max-width: 250px; height: auto;"/>
+            </div>
+
+    </div>
+</div>
+</body>
+</html>

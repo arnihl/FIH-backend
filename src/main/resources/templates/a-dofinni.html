@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FÍH</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-4/css/bootstrap.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="css/bootstrap/bootstrap-4/js/bootstrap.min.js"></script>
+
+</head>
+
+<body class="FIH-algengarspurningar-body" style="background-color: #0D1321;">
+<!-- Nav Bar -->
+<!-- justify-content-around prufa fyrir navbar-->
+<div th:insert="/header.html :: header">
+
+</div>
+<!-- /Navbar dropdown-->
+
+
+<!-- Content-->
+<div class="container text-white pt-5 pb-5" style="background-color: #0D1321;">
+    <h1>Á döfinni</h1>
+    <div class="row border-top border-white pt-5 mb-5" th:each="story : ${stories}">
+        <div class="col-8 ">
+            <h3 class="" th:text="${story.title}"></h3>
+            <p th:text="${#dates.format(story.timestamp, 'dd-MMM-yyyy')}"></p>
+            <p th:text="${story.tag}"></p>
+            <hr>
+            <p th:text="${story.content}"></p>
+
+        </div>
+        <div class="col-4">
+            <div th:switch="${story.imgRef}">
+                <div th:case="${''}">
+
+                </div>
+            <div th:case="*">
+                <img  th:src="@{${'/img/'+ story.imgRef}}" style=" width: 100%; height: auto; " alt="mynd með frétt">
+
+            </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- /Content-->
+
+<!-- Footer -->
+<div th:insert="/footer.html :: footer">
+
+</div>
+
+<!-- /Footer-->
+
+<script src="js/main.js " async defer></script>
+</body>
+
+</html>
+</body>
+</html>

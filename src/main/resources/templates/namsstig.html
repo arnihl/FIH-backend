@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FÍH</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-4/css/bootstrap.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body class="FIH-forsida-body">
+    <!-- NavBar -->
+    <div th:insert="/header.html :: header">
+
+    </div>
+    <!-- /Navbar -->
+
+    <!-- Content-->
+    <section id="FIH-sax-header">
+        <div class="">
+            <img id="FIH-saxheim-image" src="img/Sax_heim.jpg">
+        </div>
+    </section>
+
+    <div class="bg-white p-5">
+        <div class="container ">
+            <div class="row">
+                <div class="col-10 mt-2" style="background-color: #0D1321;">
+                    <h1 class="text-white">Námsstig</h1>
+                    <p class="text-white">Frá og með hausti 2017 mun Tónlistarskóli FÍH sérhæfa sig í námi á grunn- og miðstigum í söng og hljóðfæraleik og er nemendum sem hyggjast stunda nám á mið- eða framhaldsstigi í söng eða framhaldsstigi í hljóðfæraleik bent á að kynna
+                        sér námið í MÍT – www.menton.is
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-10" style="background-color: #0D1321;">
+                    <h2 class="text-white">Grunn og-miðstig</h2>
+                    <p class="text-white">Skólinn býður upp á nám á grunn- og miðstigi í hljóðfæraleik og söng og er námið góður undirbúningur fyrir tónlistarnám á framhaldsstigi. Miðað er að því að tónlistarnemendur njóti gæða tónlistarkennslu frá fyrstu tíð undir handleiðslu
+                        góðra kennara og starfandi listamanna. Boðið er upp á fjölbreytt samspilsverkefni og jafnframt eiga eldri nemendur í grunn- og miðstigi þess kost að taka þátt í hljómsveitar- og samspilsverkefnum í framhaldsdeildum MÍT um leið
+                        og þeir hafa næga hæfni og þekkingu til að bera. Þannig geta yngri nemendur litið til þeirra sem eru lengra komnir og átt í þeim mikilvægar fyrirmyndir. Með þessu fyrirkomulagi hafa yngri nemendur jafnframt aðgang að fyrsta flokks
+                        tónlistarkennslu frá byrjun.</p>
+                </div>
+                <div class="col-10" style="background-color: #0D1321;">
+                    <h2 class="text-white">Fræðigreinar á framhaldsstigi</h2>
+                    <p class="text-white">Auk þeirra tónfræðigreina sem boðið er upp á í Tónlistarskóla FÍH geta nemendur skólans sótt bóklegar greinar á framhaldsstigi í MÍT, hafi þeir lokið tilskyldum forkröfum.<a href="http://menton.is/index.php/fraedigreinar/"> Hér má finna upplýsingar um þær fræðigreinar sem í boði eru hjá MÍT.</a></p>
+                </div>
+
+            </div>
+        </div>
+        <div class="container p-5">
+            <div class="row">
+                <div class="col-4" style="background-color: #FEB95F;">
+                    <h1>Grunnnám</h1>
+                    <br>
+                    <h4>Undanfari:</h4>
+                    <p>Enginn</p>
+                    <br>
+                    <h4>Yfirferð í hljóðfæranámi eða söng:</h4>
+                    <p>1.-3. stig eða grunnpróf</p>
+                    <br>
+                    <h4>Fræðigreinar:</h4>
+                    <p>Tónfræði 1</p>
+                </div>
+                <div class="col-2">
+
+                </div>
+                <div class="col-4" style="background-color: #AD2E24;">
+                    <h1>Miðnám</h1>
+                    <br>
+                    <h4>Undanfari:</h4>
+                    <p>Grunnpróf eða 3. stig í hljóðfæraleik/söng
+                    </p>
+                    <br>
+                    <h4>Yfirferð í hljóðfæranámi eða söng:
+                    </h4>
+                    <p>Miðpróf eða 4.-5. stig í hljóðfæraleik/söng
+                    </p>
+                    <br>
+                    <h4>Fræðigreinar:</h4>
+                    <p>Tónfræði 2 eða Tónfræði hraðferð
+                    </p>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- /Content-->
+
+    <!-- Footer -->
+    <div th:insert="/footer.html :: footer">
+
+    </div>
+    <!-- /Footer-->
+
+    <script src="js/main.js" async defer></script>
+</body>
+
+</html>

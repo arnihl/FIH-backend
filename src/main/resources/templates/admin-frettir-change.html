@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bæta við kennara</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap/bootstrap-4/css/bootstrap.css}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+<!--/*@thymesVar id="teacher" type=""*/-->
+<a class="btn border border-dark" role="button" href="/fih-admin/frettir">Til baka</a>
+<a class="btn border border-dark" role="button" th:href="@{${'/fih-admin/frettir/delete/' + realStory.id}}">Eyða frétt</a>
+
+<div class="container">
+    <div class="row flex-row">
+        <div class="col">
+        <form action="#" th:action="@{${'/fih-admin/frettir/change/' + realStory.id}}" th:object="${tempStory}" enctype="multipart/form-data" method="post">
+            <div class="form-group">
+                <label for="title">Titill</label>
+                <input class="form-control" type="text" th:field="*{title}" id="title" placeholder="Titill">
+                <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>
+            </div>
+            <div class="form-group">
+                <label for="content">Innihald fréttar</label>
+                <textarea class="form-control" type="text" th:field="*{content}" id="content" >Innihald fréttar</textarea>
+                <span th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></span>
+            </div>
+            <div class="form-group">
+                <label for="tag">Masterclass, viðburður eða frétt</label>
+                <select class="form-control" th:field="*{tag}" id="tag">
+                    <option value="Masterclass">MasterClass</option>
+                    <option value="Viðburður">Viðburður</option>
+                    <option value="Fréttir">Fréttir</option>
+                </select>
+                <span th:if="${#fields.hasErrors('tag')}" th:errors="*{tag}"></span>
+
+            </div>
+            <div class="form-group">
+                <label for="img">Mynd</label>
+                <input class="form-control-file"type="file" th:field="*{img}" id="img" placeholder="Mynd">
+                <span th:if="${#fields.hasErrors('img')}" th:errors="*{img}"></span>
+
+            </div>
+            <input type="submit" value="Breyta frétt">
+        </form>
+
+        </div>
+        <div class="col">
+            <p th:text="${realStory.imgRef}"></p>
+            <img th:src="@{${'/img/' + realStory.imgRef}}"/>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

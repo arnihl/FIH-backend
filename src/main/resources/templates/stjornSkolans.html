@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.w3.org/1999/xhtml" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FÍH</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-4/css/bootstrap.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="css/bootstrap/bootstrap-4/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <!-- Nav Bar -->
+    <!-- justify-content-around prufa fyrir navbar-->
+    <div th:insert="/header.html :: header">
+
+    </div>
+    <!-- /Navbar dropdown-->
+    <section id="FIH-sax-header">
+        <div class="">
+            <img id="FIH-saxheim-image" src="img/Sax_heim.jpg">
+        </div>
+    </section>
+
+
+    <!-- Content-->
+    <div class="container ">
+        <div class="row m-5" style="background-color: #FEB95F !important; opacity: 80%;">
+            <div class=" col-md-7 m-5">
+                <h1 class="">Stjórn skólans</h1>
+                <h4>Skólastjóri: Róbert Þórhallsson</h4>
+                <br><br>
+                <h5>Stjórnskipulag</h5>
+                <p class="">
+                    Skólastjóri hefur yfirumsjón með rekstri skólans, húsnæði, fjármálum og ráðningu starfsmanna. Hann fer með æðsta ákvörðunarvald í öllum málum. Yfirkennari mótar námsbrautir, hefur yfirumsjón með kennslustefnu og útfærslu hennar, námsefni, tónleikahaldi,
+                    töflugerð og námsráðgjöf. Skólaritari sér um þjónustu og samskipti við nemendur og kennara varðandi skráningu, skólagjöld, einkunnir, prófskírteini, bréfaskipti, skólasafn, launagreiðslur o.fl. Skólaráð samanstendur af skólastjóra,
+                    yfirkennara og einum fulltrúa kennara sem kosinn er árlega á kennarafundi. Skólaráð er vettvangur fyrir skoðanaskipti, stefnumótun og úrlausn erfiðra mála. Ráðið hefur á hendi skipulagningu skólaársins og samræmingu tónleikahalds.
+                </p>
+            </div>
+
+
+
+        </div>
+    </div>
+    <hr>
+    <!-- /Content-->
+
+    <!-- Footer -->
+    <div th:insert="/footer.html :: footer">
+
+    </div>
+
+    <!-- /Footer-->
+
+    <script src="js/main.js " async defer></script>
+</body>
+
+</html>

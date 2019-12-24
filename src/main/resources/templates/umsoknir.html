@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.w3.org/1999/xhtml" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Umsóknir</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-4/css/bootstrap.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="css/bootstrap/bootstrap-4/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<!-- Nav Bar -->
+<!-- justify-content-around prufa fyrir navbar-->
+<div th:insert="/header.html :: header">
+
+</div>
+<!-- /Navbar dropdown-->
+<section id="FIH-sax-header">
+    <div class="">
+        <img id="FIH-saxheim-image" src="img/Sax_heim.jpg">
+    </div>
+</section>
+
+
+<!-- Content-->
+<div class="container ">
+    <div class="row m-5 border-bottom border-white" style="background-color: #FEB95F !important; opacity: 80%;">
+        <div class=" col-md-7 m-5">
+            <h1 class="">Umsóknir</h1>
+            <p>Til að fá nákvæmar dagsetningar um opnun umsókna, umsóknarfrest og inntökuprufur fyrir næsta skólaár þarf að fylgjast með fréttum undir: <a href="/adofinni">Á döfinni</a>, en umsóknarfrestur er venjulega í kringum Maí. </p>
+            <br><br>
+            <p>Til að sækja um þarf að fylla út <strong>tvær</strong> umsóknir, eina á Visku og aðra á Rafrænni Reykjavík, sem má finna hér að neðan.</p>
+            <br><br>
+
+        </div>
+
+
+
+    </div>
+    <div class="row m-5 border-bottom border-white" style="background-color: #AD2E24 !important; opacity: 80%;">
+        <div class="col-md-7 m-5 text-white ">
+            <h1>Tenglar fyrir umsóknir</h1>
+            <p><strong>Umsóknir á Visku: </strong> <a href="https://www.viska.is/v/umsokn_FIH/">Sækja um!</a></p>
+            <p><strong>Umsóknir á Rafræn Reykjavík: </strong> <a href="https://rafraen.reykjavik.is/pages/notandi/umsoknir/umsoknumtonlistarskola
+
+">Sækja um!</a></p>
+        </div>
+    </div>
+</div>
+<hr>
+<!-- /Content-->
+
+<!-- Footer -->
+<div th:insert="/footer.html :: footer">
+
+</div>
+
+<!-- /Footer-->
+
+<script src="js/main.js " async defer></script>
+</body>
+
+</html>

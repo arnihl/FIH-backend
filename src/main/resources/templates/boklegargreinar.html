@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FÍH</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-4/css/bootstrap.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="css/bootstrap/bootstrap-4/js/bootstrap.min.js"></script>
+
+</head>
+
+<body class="FIH-algengarspurningar-body" style="background-color: #0D1321;">
+<!-- Nav Bar -->
+<!-- justify-content-around prufa fyrir navbar-->
+<div th:insert="/header.html :: header">
+
+</div>
+<!-- /Navbar dropdown-->
+
+
+<!-- Content-->
+<section class="FIH-boklegar-greinar text-white" style="background-color: #0D1321; opacity: 0.8;">
+    <div class="container-fluid p-4 " style="opacity: 1;">
+        <div class="row justify-content-center align-items-center ">
+            <div class="col-md-3 col-sm-12 p-5">
+                <h2>Áfangar MÍT: </h2>
+                <p>Áfangar MÍT kenndir í Rauðagerði 27 og forkröfur fyrir þá: nemendur FÍH hafa aðgang að bóklegum fögum MÍT ef þeir hafa forkröfur og pláss leyfir. nemendur mæta í þau bóklegu fög sem þeir ætla að vera í.</p>
+            </div>
+            <div class="col-md-9 col-sm-12 ">
+                <h2>Bóklegar greinar FÍH</h2>
+                <table class="table table-hover text-white">
+                    <thead>
+                    <tr>
+                        <th scope="col">Áfangar</th>
+                        <th scope="col">Tímasetningar</th>
+                        <th scope="col">Salur</th>
+                        <th scope="col">Dagur</th>
+                        <th scope="col">Kennari</th>
+                        <th scope="col">Forkröfur</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="afangi : ${fihafangar}">
+                        <th scope="row" th:text="${afangi.name}"></th>
+                        <td th:text="${afangi.time}"></td>
+                        <td th:text="${afangi.place}"></td>
+                        <td th:text="${afangi.day}"></td>
+                        <td><a th:href="@{${'/kennarar/'}}" th:text="${afangi.teacher.abbreviation}"> </a></td>
+                        <td th:text="${afangi.preRequirements}"></td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td colspan="4"><strong>Áfangar MÍT, Rauðagerði 27 og forkröfur fyrir þá:</strong> </td>
+                        <td></td>
+
+                    </tr>
+                    <tr th:each="afangi : ${mitafangar}">
+                        <th scope="row" th:text="${afangi.name}"></th>
+                        <td th:text="${afangi.time}"></td>
+                        <td th:text="${afangi.place}"></td>
+                        <td th:text="${afangi.day}"></td>
+                        <td>
+                            <a href="/kennarar" th:text="${afangi.teacher.abbreviation}">K.E.</a>
+                        </td>
+                        <td th:text="${afangi.preRequirements}"></td>
+                    </tr>
+
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- /Content-->
+
+<!-- Footer -->
+<div th:insert="/footer.html :: footer">
+
+</div>
+
+<!-- /Footer-->
+
+<script src="js/main.js " async defer></script>
+</body>
+
+</html>
+</body>
+</html>

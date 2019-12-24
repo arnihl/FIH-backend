@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FÍH</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-4/css/bootstrap.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="css/bootstrap/bootstrap-4/js/bootstrap.min.js"></script>
+
+</head>
+
+<body class="FIH-algengarspurningar-body" style="background-color: #0D1321;">
+    <!-- Nav Bar -->
+    <!-- justify-content-around prufa fyrir navbar-->
+    <div th:insert="/header.html :: header">
+
+    </div>
+    <!-- /Navbar dropdown-->
+
+
+    <!-- Content-->
+    <section class="FIH-algengarspurningar-content" style="min-height: 550px;">
+        <section class="accordion-section clearfix mt-3" aria-label="Question Accordions">
+            <div class="container">
+
+                <h2 class="text-white">Algengar spurningar </h2>
+                <div class="panel-group " id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default mb-3 border border-white ">
+                        <div class="panel-heading p-3 " role="tab" id="heading0">
+                            <h3 class="panel-title">
+                                <a class="collapsed text-white" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse0" aria-expanded="true" aria-controls="collapse0">
+                                  Á hvaða hljóðfæri er hægt að læra í FÍH?
+                                </a>
+                            </h3>
+                        </div>
+                        <div id="collapse0" class="panel-collapse collapse text-white" role="tabpanel" aria-labelledby="heading0">
+                            <div class="panel-body px-3 mb-4 text-white">
+                                <p>Við hjá TFÍH bjóðum uppá nám á eftirfarandi hljóðfæri: </p>
+                                <ul>
+                                    <li>Söng</li>
+                                    <li>Gítar</li>
+                                    <li>Bassa</li>
+                                    <li>Fiðlu</li>
+                                    <li>Selló</li>
+                                    <li>Trompet</li>
+                                    <li>Básúnu</li>
+                                    <li>Saxófón</li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default mb-3 border border-white">
+                        <div class="panel-heading p-3 " role="tab" id="heading1">
+                            <h3 class="panel-title">
+                                <a class="collapsed text-white" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                  Hvað tekur námið mikinn tíma á viku?
+                                </a>
+                            </h3>
+                        </div>
+                        <div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1">
+                            <div class="panel-body px-3 mb-4 text-white">
+                                <p>Building a website is extremely easy. With a working knowledge of HTML and CSS you will be able to have a site up and running in no time.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default mb-3 border border-white">
+                        <div class="panel-heading p-3 " role="tab" id="heading2">
+                            <h3 class="panel-title">
+                                <a class="collapsed text-white" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="true" aria-controls="collapse2">
+                                  Hver er munurinn á FÍH og MÍT?
+                                </a>
+                            </h3>
+                        </div>
+                        <div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
+                            <div class="panel-body px-3 mb-4 text-white">
+                                <p>Using Amazon AWS technology which is an industry leader for reliability you will be able to experience an uptime in the vicinity of 99.95%.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default mb-3 border border-white">
+                        <div class="panel-heading p-3 " role="tab" id="heading3">
+                            <h3 class="panel-title">
+                                <a class="collapsed text-white" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="true" aria-controls="collapse3">
+                                  Hvaða áfangar eru í boði í FÍH?
+                                </a>
+                            </h3>
+                        </div>
+                        <div id="collapse3" class="panel-collapse collapse text-white" role="tabpanel" aria-labelledby="heading3">
+                            <div class="panel-body px-3 mb-4">
+                                <p>Yes, Solodev CMS is built to handle the needs of any size company. With our Multi-Site Management, you will be able to easily manage all of your websites.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </section>
+
+    <!-- /Content-->
+
+    <!-- Footer -->
+    <div th:insert="/footer.html :: footer">
+
+    </div>
+
+    <!-- /Footer-->
+
+    <script src="js/main.js " async defer></script>
+</body>
+
+</html>

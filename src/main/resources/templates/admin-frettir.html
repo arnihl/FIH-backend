@@ -1,0 +1,59 @@
+<!DOCTYPE html >
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Fréttir</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap-4/css/bootstrap.css" th:src="@{/css/bootstrap/bootstrap-4/css/bootstrap.css}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+<a href="/fih-admin/">Til baka</a>
+<a href="/fih-admin/frettir/add">Bæta við frétt</a>
+<!--/*@thymesVar id="stories" type="is.tonlistarskolifih.TonlistarskoliFIH.Entity"*/-->
+<div th:switch="${stories}">
+    <div th:case="null">
+        <h2>Engar fréttir skráðar</h2>
+    </div>
+    <div th:case="*">
+        <h2>Fréttir</h2>
+        <div th:each="story : ${stories}" class="container-fluid">
+            <div class="row">
+                <div class="col">
+
+                    <img th:src="@{${'/img/' + story.imgRef}}" alt="mynd með frétt" />
+                    <p th:text="${story.imgRef}"></p>
+
+                </div>
+                <div class="col">
+                    <h4>Titill</h4>
+                    <p th:text="${story.title}"></p>
+                    <h4>Innihald</h4>
+                    <p th:text="${story.content}"></p>
+                    <h4>Tagg</h4>
+                    <p th:text="${story.tag}"></p>
+                    <h4>Dagsetning fréttar</h4>
+                    <p th:text="${story.timestamp}"></p>
+
+                    <a th:href="@{${'/fih-admin/frettir/change/' + story.id}}">Breyta Frétt</a>
+
+                </div>
+
+            </div>
+            <hr>
+        </div>
+
+    </div>
+</div>
+</body>
+
+</html>

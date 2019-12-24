@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bæta við Áfanga</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap/bootstrap-4/css/bootstrap.css}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+<!--/*@thymesVar id="teacher" type=""*/-->
+<a href="/fih-admin/afangar">Til baka</a>
+<form action="#" th:action="@{/fih-admin/afangar/add}" th:object="${course}" method="post">
+    <div class="form-group">
+        <label for="name">Nafn</label>
+        <input class="form-control" type="text" th:field="*{name}" id="name" placeholder="Nafn">
+        <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+
+    </div>
+    <div class="form-group">
+        <label for="time">Tími</label>
+        <input class="form-control" type="text" th:field="*{time}" id="time" placeholder="Klukkan hvað?">
+        <span th:if="${#fields.hasErrors('time')}" th:errors="*{time}"></span>
+    </div>
+    <div class="form-group">
+        <label for="day">Dagur</label>
+        <input class="form-control" type="text" th:field="*{day}" id="day" placeholder="Hvaða vikudagur?">
+        <span th:if="${#fields.hasErrors('day')}" th:errors="*{day}"></span>
+
+    </div>
+    <div class="form-group">
+        <label for="place">Staðsetning</label>
+        <input class="form-control" type="text" th:field="*{place}" id="place" placeholder="Hvar er áfanginn kenndur">
+        <span th:if="${#fields.hasErrors('place')}" th:errors="*{place}"></span>
+    </div>
+    <div class="form-group">
+        <label for="school">Hvor skólinn?</label>
+        <select class="form-control" th:field="*{school}" id="school">
+            <option value="FÍH">FÍH</option>
+            <option value="MÍT">MÍT</option>
+        </select>
+        <span th:if="${#fields.hasErrors('school')}" th:errors="*{school}"></span>
+    </div>
+    <div class="form-group">
+        <label for="teacherId">Hvaða kennari?</label>
+        <select class="form-control" th:field="*{teacherId}" id="teacherId">
+            <option th:each="teacher : ${teachers}" th:value="${teacher.id}" th:text="${teacher.teacher.name}">
+            </option>
+        </select>
+        <span th:if="${#fields.hasErrors('teacherId')}" th:errors="*{teacherId}"></span>
+    </div>
+    <div class="form-group">
+        <label for="preRequirements">Forkröfur</label>
+        <input class="form-control" type="text" th:field="*{preRequirements}" id="preRequirements" placeholder="Forkröfur">
+        <span th:if="${#fields.hasErrors('preRequirements')}" th:errors="*{preRequirements}"></span>
+    </div>
+    
+    <input type="submit" value="Bæta við Áfanga">
+</form>
+</body>
+</html>

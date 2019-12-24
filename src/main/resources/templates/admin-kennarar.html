@@ -1,0 +1,65 @@
+<!DOCTYPE html >
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap-4/css/bootstrap.css" th:src="@{/css/bootstrap/bootstrap-4/css/bootstrap.css}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+<a href="/fih-admin">Til baka</a>
+<a href="/fih-admin/kennarar/add">Bæta við kennara</a>
+<!--/*@thymesVar id="teachers" type="is.tonlistarskolifih.TonlistarskoliFIH.Entity"*/-->
+<!--/*@thymesVar id="imgRef" type="java.lang.String"*/-->
+<!--/*@thymesVar id="name" type="java.lang.String"*/-->
+<!--/*@thymesVar id="description" type="java.lang.String"*/-->
+<div th:switch="${teachers}">
+    <div th:case="null">
+        <h2>Engir kennarar</h2>
+    </div>
+    <div th:case="*">
+        <h2>Kennarar</h2>
+        <div th:each="teacher : ${teachers}" class="container-fluid">
+            <div class="row">
+                <div class="col">
+
+                    <img th:src="@{${'/img/' + teacher.teacher.imgRef}}" alt="mynd af kennara" />
+                    <p th:text="${teacher.teacher.imgRef}"></p>
+
+                </div>
+                <div class="col">
+                    <h4>Nafn</h4>
+                    <p th:text="${teacher.teacher.name}"></p>
+                    <h4>Skammstöfun</h4>
+                    <p th:text="${teacher.teacher.abbreviation}"></p>
+                    <h4>lýsing</h4>
+                    <p th:text="${teacher.teacher.description}"></p>
+                    <h4>Símanúmer</h4>
+                    <p th:text="${teacher.teacher.phoneNumber}"></p>
+                    <h4>Netfang</h4>
+                    <p th:text="${teacher.teacher.email}"></p>
+                    <h4>Starfsgrein</h4>
+                    <p th:text="${teacher.teacher.profession}"></p>
+
+                    <a th:href="@{${'/fih-admin/kennarar/change/' + teacher.id}}">Breyta kennara</a>
+                </div>
+
+            </div>
+
+            <hr>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
