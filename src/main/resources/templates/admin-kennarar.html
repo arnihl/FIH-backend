@@ -32,7 +32,7 @@
             <div class="row">
                 <div class="col">
 
-                    <img th:src="@{${'/img/kennarar/' + teacher.teacher.imgRef}}" alt="mynd af kennara" style="width:100%; height: auto; object-fit: cover;"/>
+                    <img th:src="@{${'/img/kennarar/' + teacher.teacher.imgRef}}" alt="mynd af kennara" style="width:100%; height: auto; max-height: 600px; object-fit: cover;"/>
                     <p th:text="${teacher.teacher.imgRef}"></p>
 
                 </div>
