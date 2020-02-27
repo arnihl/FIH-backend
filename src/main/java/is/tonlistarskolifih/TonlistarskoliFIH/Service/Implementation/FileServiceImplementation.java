@@ -16,12 +16,14 @@ import java.nio.file.StandardCopyOption;
 @Service
 public class FileServiceImplementation implements FileService {
 
-    @Value("${app.upload.image.dir}")
-    public String uploadDir;
+    @Value("${app.upload.Timage.dir}")
+    public String TeacherDir;
+    @Value("${app.upload.Fimage.dir}")
+    public String kennaraDir;
 
     @Override
-    public void uploadFile(MultipartFile file) {
-        System.out.println(uploadDir);
+    public void uploadFile(MultipartFile file, String s) {
+        String uploadDir = s.equals("k") ? TeacherDir : kennaraDir;
         try {
             Path copyLocation = Paths
                 .get(uploadDir + File.separator + StringUtils.cleanPath(file.getOriginalFilename()));

@@ -7,23 +7,26 @@
 </head>
 <body>
 <section id="FIH-footer-container " class="" th:fragment="footer" style="">
-    <div class="container-fluid text-white" style="background-color: #000000; height: 240px; padding-top: 2%;">
-       <div class="container-fluid">
-           <div class="row d-flex flex-row">
-               <div class="col-2 ">
-                   <img th:src="@{/img/Fihlog03.bmp}" alt="FÍH-logo svart" style="max-width: 80%; height: auto;">
+    <footer class="page-footer font-small p-4">
+        <div class="container-fluid">
+            <div class="row d-flex flex-row">
+                <div class="col-12 col-sm-12 d-flex flex-row justify-content-center">
+                    <img th:src="@{/img/logo/Fihlog03.bmp}" alt="fih-logo">
+                </div>
+                <div class="col-12 d-flex flex-column align-items-center col-sm-12 mt-1">
+                    <h5 class="text-white">Tónlistarskóli FÍH</h5>
+                    <p class="text-white">Rauðagerði 27</p>
+                    <p class="text-white">115 Reykjavík</p>
+                    <p class="text-white">Sími: 565-8857</p>
+                    <div class="d-flex">
+                        <a href="https://www.facebook.com/fihton/"><i class="fa fa-facebook-official mr-2" style="font-size:36px;color:blue"></i></a>
+                        <a href="#"> <i class="fa fa-instagram" style="font-size:36px;color:brown"></i></a>
+                    </div>
+                </div>
 
-               </div>
-               <div class="col-4 pt-2">
-                   <h2>Tónlistarskóli FÍH</h2>
-                   <br>
-                   <p>Rauðagerði 27</p>
-                   <p>115 Reykjavík</p>
-                   <p>Sími: 5658857</p>
-               </div>
-           </div>
+            </div>
         </div>
-    </div>
+    </footer>
 </section>
 
 </body>

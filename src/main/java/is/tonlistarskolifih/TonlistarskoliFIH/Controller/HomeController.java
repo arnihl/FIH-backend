@@ -1,5 +1,6 @@
 package is.tonlistarskolifih.TonlistarskoliFIH.Controller;
 
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import is.tonlistarskolifih.TonlistarskoliFIH.Entity.*;
 import is.tonlistarskolifih.TonlistarskoliFIH.Service.CourseService;
 import is.tonlistarskolifih.TonlistarskoliFIH.Service.NewsStoryService;
@@ -23,7 +24,7 @@ public class HomeController {
     TeacherService teacherService;
     NewsStoryService newsStoryService;
     CourseService courseService;
-
+    boolean datamade = false;
     @Autowired
     public HomeController(UserService userService, TeacherService teacherService, NewsStoryService newsStoryService, CourseService courseService) {
         this.userService = userService;
@@ -42,10 +43,8 @@ public class HomeController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String Home(Model model){
-        model.addAttribute("fihafangar", courseService.findAllFIHCourses());
-        model.addAttribute("mitafangar", courseService.findAllMITCourses());
         model.addAttribute("stories", newsStoryService.getNewestStories());
-        return "index";
+        return "forsida";
     }
 
     @RequestMapping("/umsoknir")
@@ -98,8 +97,14 @@ public class HomeController {
 
     @RequestMapping(value = "/adofinni", method = RequestMethod.GET)
     public String ADofinniGet(Model model){
-        model.addAttribute("stories", newsStoryService.getStoriesNewestFirst());
-        return "a-dofinni";
+        model.addAttribute("stories", newsStoryService.findAll());
+        return "adofinni";
+    }
+
+    @RequestMapping(value = "/adofinni/{id}", method = RequestMethod.GET)
+    public String adofinniFrettGet(@PathVariable("id") String id, Model model){
+        model.addAttribute("story", newsStoryService.findById(Long.parseLong(id)));
+        return "frett";
     }
 
     @RequestMapping("/algengarspurningar")
@@ -123,6 +128,7 @@ public class HomeController {
 
     @RequestMapping("/makedata")
     public String MakeData() {
+        if(datamade) return "redirect:/";
         userService.save(new User("fihAdmin", "FIHadmin!2#4"));
         teacherService.save(new Teacher("Aðalheiður Þorsteinsdóttir", "AÞ", "allat@simnet.is", "864 9234", "Aðalheiður Þorsteinsdóttir lauk námi frá tónfræðadeild Tónlistarskólans í Reykjavík og organistaprófi frá Tónskóla Þjóðkirkjunnar. Hún hefur starfað sem píanóleikari og organisti með fjölda einsöngvara og kóra. Einnig sinnt útsetningum, kennslu, séð um tölvusetningu nótnabóka og verið í hlutastarfi hjá Íslenskri tónverkamiðstöð sem hefur að geyma nótnasafn íslenskra tónverka.", "Meðleikur", "Adalheidur_Thorsteinsdottir.jpg"), null);
         teacherService.save(new Teacher("Agnar Már Magnússon", "AMM", "agnarmagnusson@internet.is", "695 1496", "Eftir að hafa lokið burtfararprófi frá Tónlistarskóla FÍH kláraði Agnar nám við Conservatorium van Amsterdam og einkanám hjá Larry Goldings í New York. Í New York komst Agnar í kynni við fleiri þekkta tónlistarmenn á sviði djassins en þau kynni leiddu m.a. til útgáfu fyrsta geisladisks hans sem ber nafnið 01. Frá því þá hefur Agnar gefið út fjölda geisladiska til viðbótar. Agnar hefur margoft verið tilnefndur til íslensku tónlistarverðlaunanna og tvisvar hlotið þau. \n" +

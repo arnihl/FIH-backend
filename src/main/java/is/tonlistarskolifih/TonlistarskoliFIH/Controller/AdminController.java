@@ -70,6 +70,7 @@ public class AdminController {
     @RequestMapping(value = "/fih-admin/kennarar", method = RequestMethod.GET)
     public String KennararAdminGet(Model model, HttpSession session){
         if(!isLoggedIn(session)){
+            System.out.println("admin/kennarar" + session.getAttribute("loggedInUser"));
             return "redirect:/";
         }
         model.addAttribute("teachers", teacherService.findAll());
@@ -95,7 +96,7 @@ public class AdminController {
             return "redirect:/fih-admin/kennarar/add";
         }
         // reyna að fá inn fæl sem byte
-        fileService.uploadFile(teacher.getImg());
+        fileService.uploadFile(teacher.getImg(), "k");
         teacherService.saveTempTeacher(teacher);
         return "redirect:/fih-admin/kennarar";
 
@@ -172,7 +173,7 @@ public class AdminController {
         if(result.hasErrors()){
             return "redirect:/fih-admin/frettir/add";
         }
-        fileService.uploadFile(newsStory.getImg());
+        fileService.uploadFile(newsStory.getImg(), "f");
         newsStoryService.saveTempNewsStory(newsStory);
         return "redirect:/fih-admin/frettir";
     }

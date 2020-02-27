@@ -7,9 +7,7 @@
     font-family: Arial;
 }
 
-h1,
-h2,
-h4 {
+h1{
     font-family: Roboto;
 }
 
@@ -102,4 +100,8 @@ a {
 
 .panel-title:hover a {
     color: gray !important;
+}
+
+h4:hover {
+    transform: scale(0.5);
 }

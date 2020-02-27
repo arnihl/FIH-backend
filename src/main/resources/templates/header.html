@@ -6,243 +6,64 @@
 
 </head>
 <body>
-<div class="FIH-nav" id="FIH-nav" th:fragment="header">
-    <nav class="navbar navbar-light navbar-expand-md bg-white border-bottom">
-        <a href="/" class="navbar-brand d-flex w-40 mr-auto"><img th:src="@{/img/TFIH_logo_small.jpg}"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
-            <ul class="navbar-nav w-100 justify-content-end">
-                <li class="nav-item">
-                    <a href="/umsoknir" class="btn btn-white" role="button" type="button" id="FIH-umsoknir-btn">
-                        <h4>Umsóknir</h4>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="btn btn-white" role="button" href="/umskolann" id="FIH-umskolann-btn">
-                        <h4>Um skólann</h4>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="/adofinni" class="btn btn-white" role="button" type="button" id="FIH-adofinni-btn">
-                        <h4>Á döfinni</h4>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="/namsstig" class="btn btn-white" role="button" type="button" id="FIH-namid-btn">
-                        <h4>Námið</h4>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="/hafasamband" class="btn btn-white" role="button" type="button" id="FIH-hafasamband-btn">
-                        <h4>Hafa samband</h4>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="/algengarspurningar" class="btn btn-white" role="button" type="button" id="FIH-algengarspurningar-btn">
-                        <h4>Algengar Spurningar</h4>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="https://www.viska.is/v/viska_inn.php" class="btn btn-white" role="button" type="button" id="FIH-viska-btn">
-                        <h4>Viska</h4>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="w-30">
+<nav class="navbar navbar-expand-lg navbar-light bg-white" th:fragment="header">
+    <a class="navbar-brand" href="/">
+        <img src="/img/logo/TFIH_logo_small.jpg" width="60" height="60" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-        </div>
-    </nav>
-
-
-    <!-- /NavBar-->
-
-
-
-    <!-- Navbar dropdown -->
-    <section class="" id="FIH-navbar-dropdown" style="position: fixed; z-index: 902; width: 100%;">
-        <!-- Dropdown umsóknir-->
-        <div id="dropdown">
-            <div id="dropdown-umsoknir" class="d-none ">
-                <div class="container-fluid  d-flex justify-content-around">
-                    <div class="row">
-                        <div class="col p-3 border-right">
-                            <h3><strong>Umsóknir</strong></h3>
-                            <p>Hér má nálgast upplýsingar um umsóknir við skólann og einnig algengar spurningar varðandi námið.</p>
-                        </div>
-                        <div class="col p-3">
-
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
-                                    <a class="btn btn-white btn-link text-dark" href="/umsoknir" role="button">Sækja um nám við FÍH</a>
-                                </li>
-                                <li class="list-group-item"><a class="btn btn-white btn-link text-dark" href="/algengarspurningar" role="button">Algengar spurningar varðandi námið</a></li>
-                            </ul>
-                        </div>
-
-                    </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+                <!-- current til að segja til um hvaða síðu maður sé staddur á.-->
+                <a class="nav-link dropdown-toggle" href="#" id="umskolannDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Um Skólann <span class="sr-only">(current)</span></a>
+                <div class="dropdown-menu" aria-labelledby="umskolannDropdown">
+                    <a class="dropdown-item" href="/umskolann">Um skólann</a>
+                    <a class="dropdown-item" href="/stjorn-fih">Stjórn FÍH</a>
+                    <!--<div class="dropdown-divider">Kennarar</div>-->
+                    <a class="dropdown-item" href="/kennarar">Kennarar</a>
+                    <a class="dropdown-item" href="/nemendafelag-fih">Nemendafélag FÍH</a>
+                    <a class="dropdown-item" href="/jafnrettisaaetlun">Jafnréttisáætlun FÍH</a>
                 </div>
-            </div>
-        </div>
-        <!-- /Dropdown umsóknir-->
-        <!--                         <span class="border" style="margin-top: 0%; padding: 3%;"><a href="#" class="btn btn-white" role="button"><strong>Sækja um</strong></a></span>
--->
-
-        <!-- Dropdown Um skólann -->
-        <div id="dropdown">
-            <div id="dropdown-umskolann" class="d-none">
-                <div class="container-fluid d-flex justify-content-around">
-                    <div class="row ">
-                        <div class="col p-3 border-right">
-                            <h3><strong>Um skólann</strong></h3>
-                            <p>Hér má nálgast upplýsingar um skólann. Sögu hans, stjórn, kennaraskrá, stefnuskrár og fleira.</p>
-
-                        </div>
-                        <div class="col p-3">
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
-                                    <a class="btn btn-white btn-link text-dark" href="/umskolann" role="button">Um skólann</a>
-                                </li>
-                                <li class="list-group-item">
-                                    <a class="btn btn-white btn-link text-dark" href="/stjorn-fih" role="button">Stjórn FÍH</a>
-                                </li>
-                                <li class="list-group-item">
-                                    <a class="btn btn-white btn-link text-dark" href="/kennarar" role="button">Kennarar</a>
-                                </li>
-                                <li class="list-group-item">
-                                    <a class="btn btn-white btn-link text-dark" href="/nemendafelag-fih" role="button">Nemendafélag FÍH</a>
-                                </li>
-                                <li class="list-group-item">
-                                    <a class="btn btn-white btn-link text-dark" href="/jafnrettisaaetlun" role="button">Jafnréttisáætlun FÍH</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="namidDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Námið
+                </a>
+                <div class="dropdown-menu" aria-labelledby="namidDropdown">
+                    <a class="dropdown-item" href="/namsstig">Námsstig</a>
+                    <a class="dropdown-item" href="/fraedigreinar">Fræðigreinar</a>
+                    <a class="dropdown-item" href="/boklegargreinar">Bóklegar Greinar FÍH/MÍT</a>
                 </div>
-            </div>
-        </div>
-        <!-- /Dropdown um skólann -->
-
-        <!-- Dropdown Á döfinni -->
-        <div id="dropdown">
-            <div id="dropdown-adofinni" class="d-none">
-                <div class="container-fluid d-flex justify-content-around">
-                    <div class="row">
-                        <div class="col p-3 border-right">
-                            <h3><strong>Á döfinni</strong></h3>
-                            <p>Hér má finna ýmsa frétti og viðburði tengda tónlistarskólanum. </p>
-                        </div>
-                        <div class="col p-3">
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
-                                    <a class="btn btn-white btn-link text-dark d-flex justify-content-start align-items-center" href="/adofinni" role="button">Ýmsar fréttir</a>
-                                </li>
-                                <li class="list-group-item">
-                                    <a class="btn btn-white btn-link text-dark d-flex justify-content-start align-items-center" href="http://instagram.com" role="button">Instagram <img th:src="@{/img/The_Instagram_Logo.jpg}" class="rounded" style="max-width: 5%; height: auto;"></a>
-                                </li>
-                                <li class="list-group-item">
-                                    <a class="btn btn-white btn-link text-dark d-flex justify-content-start align-items-center" href="https://www.facebook.com/fihton/" role="button" style="white-space: normal !important;">Facebook  <img th:src="@{/img/fb_icon_325x325.png}" class="rounded" style="max-width: 4%; height: auto;"> </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="adofinniDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Á döfinni</a>
+                <div class="dropdown-menu" aria-labelledby="adofinniDropdown">
+                    <a class="dropdown-item" href="/adofinni">Fréttir</a>
+                    <a class="dropdown-item" href="https://www.facebook.com/fihton/">Facebook <i class="fa fa-facebook-official"></i></a>
+                    <a class="dropdown-item" href="#">Instagram <i class="fa fa-instagram"></i>
+                    </a>
                 </div>
-            </div>
-        </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/umsoknir">Umsóknir</a>
 
-        <!-- /Dropdown Á döfinni -->
-
-        <!-- Dropdown Námið -->
-        <div id="dropdown">
-            <div id="dropdown-namid" class="d-none">
-                <div class="container-fluid d-flex justify-content-around">
-                    <div class="row">
-                        <div class="col p-3 border-right">
-                            <h3><strong>Námið</strong></h3>
-                            <p>Helstu upplýsingar um námið sem FÍH hefur upp á að bjóða.</p>
-                        </div>
-                        <div class="col p-3">
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
-                                    <a class="btn btn-white btn-link text-dark" href="/namsstig" role="button">Námsstig</a>
-                                </li>
-                                <li class="list-group-item">
-                                    <a class="btn btn-white btn-link text-dark" href="/fraedigreinar" role="button">Fræðigreinar</a>
-                                </li>
-                                <li class="list-group-item">
-                                    <a class="btn btn-white btn-link text-dark" href="/boklegargreinar" role="button">Bóklegar greinar FÍH/MÍT</a>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <!-- /Dropdown Námið -->
-
-        <!-- Dropdown Hafa samband -->
-        <div id="dropdown">
-            <div id="dropdown-hafasamband" class="d-none">
-                <div class="container-fluid d-flex justify-content-around">
-                    <div class="row">
-                        <div class="col p-3 border-right">
-                            <h3><strong>Hafa Samband</strong></h3>
-                            <p>Upplýsingar um staðsetningu, opnunartíma og fleira til þess að nálgast okkur. </p>
-                        </div>
-                        <div class="col p-3">
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
-                                </li>
-                                <li class="list-group-item">
-                                    <a class="btn btn-white btn-link text-dark" href="/hafasamband" role="button">Hafa samband</a>
-                                </li>
-                                <li class="list-group-item">
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <!-- /Dropdown Hafa samband -->
-
-        <!-- Dropdown Algengar Spurningar -->
-        <div id="dropdown">
-            <div id="dropdown-algengar-spurningar" class="d-none">
-                <div class="container-fluid d-flex justify-content-around">
-                    <div class="row">
-                        <div class="col p-3 border-right">
-                            <h3><strong>Algengar Spurningar</strong></h3>
-                            <p>Algengar spurningar sem vakna um námið okkar og svör við þeim. </p>
-                        </div>
-                        <div class="col p-3">
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
-                                </li>
-                                <li class="list-group-item">
-                                    <a class="btn btn-white btn-link text-dark" href="/algengarspurningar" role="button">Algengar spurningar</a>
-                                </li>
-                                <li class="list-group-item">
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <!-- /Dropdown Algengar spurningar -->
-    </section>
-</div>
-
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/algengarspurningar">
+                    Algengar Spurningar
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/hafasamband">Hafa Samband</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="www.viska.is">Viska</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 </body>
 </html>

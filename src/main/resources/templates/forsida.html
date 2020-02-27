@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<!--<![endif]-->
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" th:href="@{css/bootstrap/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{css/forsida.css}">
+    <link rel="stylesheet" th:href="@{css/footer.css}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script th:src="@{js/bootstrap/bootstrap.js}"></script>
+
+</head>
+
+<body>
+
+<div th:insert="/header.html :: header">
+
+</div>
+<hr class="my-4">
+
+
+<div id="carouselFade" class="carousel slide carousel-fade m-3 " data-ride="carousel" data-interval="7000">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselFade" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselFade" data-slide-to="1"></li>
+        <li data-target="#carouselFade" data-slide-to="2"></li>
+        <li data-target="#carouselFade" data-slide-to="3"></li>
+        <li data-target="#carouselFade" data-slide-to="4"></li>
+    </ol>
+    <div class="carousel-inner  ">
+        <div class="carousel-item active ">
+            <div class="container">
+                <img src="img/Umsagnir/Ari_bragi.jpg" class="d-block img-fluid mynd" alt="Ari Bragi umsögn">
+                <div class="carousel-caption  ">
+                    <div class="blurbackground">
+
+                        <p class="caption-text">“FÍH var gríðarlega mikilvægur stökkpallur fyrir mig til þess að koma vel undirbúinn í háskólanám erlendis.” - Ari Bragi Kárason
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="container">
+                <img src="img/Umsagnir/Audur_lit copy.jpeg" class="d-block  img-fluid mynd" alt="Auður umsögn">
+                <div class="carousel-caption  ">
+                    <div class="blurbackground">
+
+                        <p class="caption-text">“FÍH kenndi mér ótalmargt um samspil, dýpkaði skilning minn á hljómum og harmóníu og þar kynntist ég fullt af frábæru tónlistarfólki. Mjög þakklátur.” - Auður
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="container p-1">
+                <img src="img/Umsagnir/Hrafnkell.jpeg" class="d-block  img-fluid mynd" alt="Hrafnkell umsögn">
+                <div class="carousel-caption ">
+                    <div class="blurbackground">
+                        <p class="caption-text">“Margir bestu tónlistarmenn landsins kenna við FÍH og þar lærði ég ekki aðeins trommuleik heldur einnig tónfræði og tónheyrn, eitthvað sem hefur nýst mér meira en mig hefði nokkurn tímann grunað.” - Hrafnkell Agent Fresco
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="container">
+                <img src="img/Umsagnir/Joi_hjoll.jpeg" class="d-block  img-fluid mynd" alt="Jóhann Hjörleifsson umsögn">
+                <div class="carousel-caption ">
+                    <div class="blurbackground">
+
+                        <p class="caption-text">“Það var mikil lukka fyrir mig að komast í Tónlistarskóla FÍH á sínum tíma. Námið þar skipti sköpum og bjó mig mjög vel undir starf í tónlistinni.” - Jóhann Hjörleifsson
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="container p-1">
+                <img src="img/Umsagnir/Oli_mynd.jpg" class="d-block  img-fluid mynd" alt="Ólafur Hólm umsögn">
+                <div class="carousel-caption ">
+                    <div class="blurbackground">
+
+                        <p class="caption-text">“Í námi mínu við Tónlistarskóla FÍH öðlaðist ég færni á hljóðfærið sem hefur gert mér kleift að takast á við ólík verkefni, hvort sem þau eru tónleikar, upptökur eða leikhúsverkefni. Þar fékk ég að læra hjá virku tónlistarfólki
+                            og kynntist fólki sem ég hef spilað með í gegnum tíðina. Mörgum af mínum bestu vinum kynntist ég í náminu í TFÍH.” - Óli Hólm
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="jumbotron jumbotron-fluid mt-5 ml-5 mr-5">
+    <div class="container">
+        <h1 class="display-4">Tónlistarskóli FÍH</h1>
+        <p class="lead">Tónlistarskóli FÍH hefur mikla sérstöðu meðal tónlistarskóla landsins. Hann býður upp á hefðbundið tónlistarnám auk kennslu í rytmískri tónlist (djass, popp og rokk).</p>
+        <hr class="my-4">
+        <h4 class="">Hefur þú áhuga á því að sækja um í TFÍH?</h4>
+        <p class="lead">
+            <a class="btn btn-outline-dark btn-lg " href="/umsoknir" role="button">Sækja um!</a>
+            <a class="btn btn-outline-dark btn-lg mt-1" href="/algengarspurningar" role="button">Algengar spurningar</a>
+        </p>
+    </div>
+</div>
+
+<div class="container-fluid mb-5 ">
+    <div class="row m-5">
+        <div class="col d-flex justify-content-center">
+            <h1 class="display-4 text-white">
+                Á döfinni
+            </h1>
+        </div>
+    </div>
+    <div class="row ml-3 mr-3">
+        <div class="col-sm-12 col-lg-4 mt-3" th:each="story : ${stories}">
+            <a href="/adofinni"><div class="card bg-dark text-white frett ">
+                <img th:src="@{${'/img/various/' + story.imgRef}}" class="card-img" alt="...">
+                <div class="card-img-overlay frett-text d-flex flex-column justify-content-end">
+                    <div class="blurbackground">
+                        <h5 class="card-title caption-text" th:text="${story.title}"></h5>
+                        <p class="card-text caption-text" th:text="${story.content}"></p>
+                        <p class="card-text caption-text" th:text="${#dates.format(story.timestamp, 'dd-MMM-yyyy')}">23.feb 2020</p>
+                    </div>
+                </div>
+            </div></a>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="boklegargreinar">
+    <div class="container-fluid d-xs-inline d-sm-inline d-md-inline d-lg-inline">
+        <div class="row">
+            <div class="col">
+                <div class="jumbotron jumbotron-fluid ml-5 mr-5 mb-3">
+                    <div class="container">
+                        <h1 class="display-4">Bóklegar greinar FÍH/MÍT</h1>
+                        <p class="lead">Sjá tímatöflu yfir bóklegar greinar í boði við FÍH og MÍT</p>
+                        <hr class="my-4">
+                        <p class="lead">
+                            <a class="btn btn-outline-dark btn-lg " href="/boklegargreinar" role="button">Bóklegar greinar</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div th:insert="/footer.html :: footer">
+
+</div>
+
+<script src="" async defer></script>
+</body>
+
+</html>

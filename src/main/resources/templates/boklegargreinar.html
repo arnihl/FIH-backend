@@ -14,16 +14,13 @@
 <!--<![endif]-->
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>FÍH</title>
-    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/bootstrap/bootstrap-4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap/bootstrap-4/css/bootstrap.css">
-    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" th:href="@{/css/bootstrap/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/css/umskolann.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="css/bootstrap/bootstrap-4/js/bootstrap.min.js"></script>
+    <script th:src="@{/js/bootstrap/bootstrap.js}"></script>
 
 </head>
 
@@ -46,7 +43,7 @@
             </div>
             <div class="col-md-9 col-sm-12 ">
                 <h2>Bóklegar greinar FÍH</h2>
-                <table class="table table-hover text-white">
+                <table class="table text-white">
                     <thead>
                     <tr>
                         <th scope="col">Áfangar</th>

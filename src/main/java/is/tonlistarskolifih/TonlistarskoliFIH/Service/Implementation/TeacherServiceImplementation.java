@@ -101,7 +101,7 @@ public class TeacherServiceImplementation implements TeacherService {
         //      Update-a allt í concreteTeacher.
         ConcreteTeacher cTeacher = findById(id);
         if(!teacher.getImg().isEmpty()){
-            fileService.uploadFile(teacher.getImg());
+            fileService.uploadFile(teacher.getImg(),"k");
             cTeacher.getTeacher().setImgRef(teacher.getImg().getOriginalFilename());
         }
 

@@ -1,10 +1,9 @@
 package is.tonlistarskolifih.TonlistarskoliFIH.Entity;
 
-import javax.jws.soap.SOAPBinding;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "User_Entity")
+@Table(name = "USER")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

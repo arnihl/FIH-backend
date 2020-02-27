@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" th:href="@{css/bootstrap/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{css/adofinni.css}">
+    <link rel="stylesheet" th:href="@{css/umskolann.css}">
+    <link rel="stylesheet" th:href="@{css/footer.css}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script th:src="@{js/bootstrap/bootstrap.js}"></script>
+</head>
+<body>
+<div th:insert="/header.html :: header">
+
+</div>
+
+<div class="d-flex align-items-center justify-content-center mt-5">
+    <h5 class="display-4 text-white">Á döfinni</h5>
+</div>
+
+<div class="d-flex flex-column justify-content-center align-items-center m-5">
+
+<div class="card mb-3" style="max-width: 540px;" th:each="story : ${stories}">
+    <a th:href="${'/adofinni/'+ story.id}">
+    <div class="row no-gutters">
+        <div class="col-md-4">
+            <div th:switch="${story.imgRef}">
+                <div th:case="${''}">
+
+                </div>
+                <div th:case="*">
+                    <img  th:src="@{${'/img/frettir/'+ story.imgRef}}" style=" width: 100%; height: auto; " alt="mynd með frétt">
+
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title" th:text="${story.title}"></h5>
+                <p class="card-text" th:text="${story.content}"></p>
+                <p class="card-text"><small class="text-muted" th:text="${#dates.format(story.timestamp, 'dd-MMM-yyyy')}"></small></p>
+            </div>
+        </div>
+    </div>
+    </div>
+    </a>
+</div>
+<div th:insert="/footer.html :: footer">
+
+</div>
+</body>
+</html>

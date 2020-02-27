@@ -7,14 +7,13 @@
 <!--<![endif]-->
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>FÍH</title>
-    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" th:href="@{/css/bootstrap/bootstrap-4/css/bootstrap.css}">
-    <link rel="stylesheet" th:href="@{/css/stylesheet.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" th:href="@{/css/bootstrap/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/css/umskolann.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script th:src="@{/js/bootstrap/bootstrap.js}"></script>
 </head>
 
 <body class="FIH-Kennari-body">
@@ -30,13 +29,13 @@
         <div class="container-fluid " style="background: #0D1321">
             <div class="row p-3">
                 <div class="col-lg-3 col-sm-6">
-                    <img th:src="@{${'/img/' + teacher.teacher.imgRef}}" th:alt="${teacher.teacher.name}" class="img-thumbnail">
+                    <img th:src="@{${'/img/kennarar/' + teacher.teacher.imgRef}}" th:alt="${teacher.teacher.name}" class="img-thumbnail">
                 </div>
                 <div class="col-lg-5 col-sm-6 text-white justify-content-start align-text-center">
                     <h1 th:text="${teacher.teacher.name}"></h1>
                     <p th:text="${teacher.teacher.description}" style="white-space: normal !important;"></p>
                     <strong>Netfang: </strong>
-                    <p th:text="${teacher.teacher.email}">allat@simnet.is</p>
+                    <p th:text="${teacher.teacher.email}"></p>
                     <strong>Símanúmer: </strong>
                     <p th:text="${teacher.teacher.phoneNumber}"></p>
                 </div>
@@ -54,7 +53,6 @@
 
     <!-- /Footer-->
 
-    <script th:src="@{/js/main.js}" async defer></script>
 </body>
 
 </html>

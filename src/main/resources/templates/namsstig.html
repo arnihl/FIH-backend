@@ -7,18 +7,16 @@
 <!--<![endif]-->
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>FÍH</title>
-    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/bootstrap/bootstrap-4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap/bootstrap-4/css/bootstrap.css">
-    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" th:href="@{/css/bootstrap/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/css/umskolann.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script th:src="@{/js/bootstrap/bootstrap.js}"></script>
 </head>
 
-<body class="FIH-forsida-body">
+<body>
     <!-- NavBar -->
     <div th:insert="/header.html :: header">
 
@@ -26,19 +24,14 @@
     <!-- /Navbar -->
 
     <!-- Content-->
-    <section id="FIH-sax-header">
-        <div class="">
-            <img id="FIH-saxheim-image" src="img/Sax_heim.jpg">
-        </div>
-    </section>
 
-    <div class="bg-white p-5">
+    <div class=" p-5">
         <div class="container ">
             <div class="row">
                 <div class="col-10 mt-2" style="background-color: #0D1321;">
                     <h1 class="text-white">Námsstig</h1>
                     <p class="text-white">Frá og með hausti 2017 mun Tónlistarskóli FÍH sérhæfa sig í námi á grunn- og miðstigum í söng og hljóðfæraleik og er nemendum sem hyggjast stunda nám á mið- eða framhaldsstigi í söng eða framhaldsstigi í hljóðfæraleik bent á að kynna
-                        sér námið í MÍT – www.menton.is
+                        sér námið í MÍT – <a href="www.menton.is">www.menton.is</a>
                     </p>
                 </div>
             </div>
@@ -57,47 +50,57 @@
 
             </div>
         </div>
-        <div class="container p-5">
+        <div class="container mb-5">
             <div class="row">
-                <div class="col-4" style="background-color: #FEB95F;">
-                    <h1>Grunnnám</h1>
-                    <br>
-                    <h4>Undanfari:</h4>
-                    <p>Enginn</p>
-                    <br>
-                    <h4>Yfirferð í hljóðfæranámi eða söng:</h4>
-                    <p>1.-3. stig eða grunnpróf</p>
-                    <br>
-                    <h4>Fræðigreinar:</h4>
-                    <p>Tónfræði 1</p>
+                <div class="col-sm-12 col-md-6 mt-5 ">
+                    <div class="card" style="background-color: #FEB95F;">
+                        <div class="card-header">
+                            <h3>Grunnnám</h3>
+                        </div>
+                        <div class="card-body">
+                            <blockquote class="blockquote mb-0">
+                                <h4>Undanfari:</h4>
+                                <p>Enginn</p>
+                                <br>
+                                <h4>Yfirferð í hljóðfæranámi eða söng:</h4>
+                                <p>1.-3. stig eða grunnpróf</p>
+                                <br>
+                                <h4>Fræðigreinar:</h4>
+                                <p>Tónfræði 1</p>
+                            </blockquote>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-2">
+                <div class="col-sm-12 col-md-6 mt-5">
+                    <div class="card" style="background-color: #AD2E24;">
+                        <div class="card-header">
+                            <h3>Miðnám</h3>
+                        </div>
+                        <div class="card-body">
+                            <blockquote class="blockquote mb-0">
 
-                </div>
-                <div class="col-4" style="background-color: #AD2E24;">
-                    <h1>Miðnám</h1>
-                    <br>
-                    <h4>Undanfari:</h4>
-                    <p>Grunnpróf eða 3. stig í hljóðfæraleik/söng
-                    </p>
-                    <br>
-                    <h4>Yfirferð í hljóðfæranámi eða söng:
-                    </h4>
-                    <p>Miðpróf eða 4.-5. stig í hljóðfæraleik/söng
-                    </p>
-                    <br>
-                    <h4>Fræðigreinar:</h4>
-                    <p>Tónfræði 2 eða Tónfræði hraðferð
-                    </p>
-
-
+                                <h4>Undanfari:</h4>
+                                <p>Grunnpróf eða 3. stig í hljóðfæraleik/söng
+                                </p>
+                                <br>
+                                <h4>Yfirferð í hljóðfæranámi eða söng:
+                                </h4>
+                                <p>Miðpróf eða 4.-5. stig í hljóðfæraleik/söng
+                                </p>
+                                <br>
+                                <h4>Fræðigreinar:</h4>
+                                <p>Tónfræði 2 eða Tónfræði hraðferð
+                                </p>
+                            </blockquote>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
 
-    <!-- /Content-->
+        <!-- /Content-->
 
     <!-- Footer -->
     <div th:insert="/footer.html :: footer">
@@ -105,7 +108,6 @@
     </div>
     <!-- /Footer-->
 
-    <script src="js/main.js" async defer></script>
 </body>
 
 </html>

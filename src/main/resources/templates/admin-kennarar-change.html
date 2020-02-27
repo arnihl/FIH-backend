@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en"  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Bæta við kennara</title>
-    <link rel="stylesheet" th:href="@{/css/bootstrap/bootstrap-4/css/bootstrap.css}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" th:href="@{css/bootstrap/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{css/adofinni.css}">
+    <link rel="stylesheet" th:href="@{css/umskolann.css}">
+    <link rel="stylesheet" th:href="@{css/footer.css}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script th:src="@{js/bootstrap/bootstrap.js}"></script>
 </head>
 <body>
 <!--/*@thymesVar id="teacher" type=""*/-->
@@ -57,7 +61,7 @@
             </div>
             <div class="col">
                 <p th:text="${teacher2.teacher.imgRef}"></p>
-                <img class="rounded" th:src="@{${'/img/' + teacher2.teacher.imgRef}}" style="max-width: 250px; height: auto;"/>
+                <img class="rounded" th:src="@{${'/img/kennarar/' + teacher2.teacher.imgRef}}" style="max-width: 250px; height: auto;"/>
             </div>
 
     </div>

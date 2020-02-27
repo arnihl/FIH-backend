@@ -7,12 +7,13 @@ import java.security.NoSuchAlgorithmException;
 public class Md5Hashing {
 
     public static String md5(String password){
-        String md5 = null;
-        String salt = "!2#4Salting#445%&&3#4$$4#4NdP33PP3R1N6";
-        password += salt;
         if(password == null){
             return null;
         }
+        String md5 = null;
+        String salt = "!2#4Salting#445%&&3#4$$4#4NdP33PP3R1N6";
+        password += salt;
+
 
         try {
             // create message digest object for Md5

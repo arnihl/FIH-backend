@@ -30,12 +30,43 @@ public class NewsStoryServiceImplementation implements NewsStoryService {
 
     @Override
     public List<NewsStory> findAll() {
-        return repository.findAll();
+        List<NewsStory> stories = repository.findAll();
+        if(stories.isEmpty()) return null;
+
+        Collections.sort(stories, new Comparator<NewsStory>() {
+            @Override
+            public int compare(NewsStory o1, NewsStory o2) {
+                return o1.getTimestamp().compareTo(o2.getTimestamp());
+            }
+        });
+
+        Collections.reverse(stories);
+        if(stories.size()>=3) {
+            stories = stories.subList(0, 3);
+        }
+        for(NewsStory story : stories){
+            String[] s = story.getContent().split(" ");
+            String b = "";
+            for(int i = 0; i < 15; i++){
+                if(i>=s.length) break;
+                b+= s[i] + " ";
+            }
+            b+= "...";
+            story.setContent(b);
+            if(story.getImgRef().equals("")){
+                story.setImgRef("piano.jpg");
+            }
+        }
+        return stories;
     }
 
     @Override
     public NewsStory findById(long id) {
-        return repository.findById(id);
+        NewsStory story = repository.findById(id);
+        if(story.getImgRef().equals("")){
+            story.setImgRef("piano.jpg");
+        }
+        return story;
     }
 
     @Override
@@ -62,7 +93,7 @@ public class NewsStoryServiceImplementation implements NewsStoryService {
         realStory.setTitle(newsStory.getTitle());
         realStory.setTag(newsStory.getTag());
         if(!newsStory.getImg().isEmpty()) {
-            fileService.uploadFile(newsStory.getImg());
+            fileService.uploadFile(newsStory.getImg(), "f");
             realStory.setImgRef(newsStory.getImg().getOriginalFilename());
         }
         save(realStory);
@@ -70,7 +101,7 @@ public class NewsStoryServiceImplementation implements NewsStoryService {
 
     @Override
     public List<NewsStory> getNewestStories() {
-        List<NewsStory> stories = findAll();
+        List<NewsStory> stories = repository.findAll();
         if(stories.isEmpty()) return null;
 
         Collections.sort(stories, new Comparator<NewsStory>() {
@@ -99,7 +130,7 @@ public class NewsStoryServiceImplementation implements NewsStoryService {
 
     @Override
     public List<NewsStory> getStoriesNewestFirst() {
-        List<NewsStory> stories = findAll();
+        List<NewsStory> stories = repository.findAll();
         if(stories.isEmpty()) return null;
 
         Collections.sort(stories, new Comparator<NewsStory>() {
@@ -108,6 +139,12 @@ public class NewsStoryServiceImplementation implements NewsStoryService {
                 return o1.getTimestamp().compareTo(o2.getTimestamp());
             }
         });
+
+        for(NewsStory story : stories){
+            if(story.getImgRef().equals("")){
+                story.setImgRef("piano.jpg");
+            }
+        }
 
         Collections.reverse(stories);
         return stories;
