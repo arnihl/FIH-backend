@@ -3,7 +3,7 @@ package is.tonlistarskolifih.TonlistarskoliFIH.Entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "USER")
+@Table(name = "User_Entity")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
