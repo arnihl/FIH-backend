@@ -18,20 +18,20 @@
 
 <body class="FIH-Kennari-body">
     <!-- Nav Bar -->
-    <div th:insert="/header :: header">
+    <div th:insert="header :: header">
 
     </div>
     <!-- /Navbar -->
 
 
     <!-- Content-->
-    <section id="FIH-kennari-content">
+    <section id="FIH-kennari-content" class="m-5">
         <div class="container-fluid " style="background: #0D1321">
             <div class="row p-3">
                 <div class="col-lg-3 col-sm-6">
-                    <img th:src="@{${'/img/kennarar/' + teacher.teacher.imgRef}}" th:alt="${teacher.teacher.name}" class="img-thumbnail">
+                    <img th:src="@{${'/img/kennarar/' + teacher.teacher.imgRef}}" th:alt="${teacher.teacher.name}" class="img-thumbnail" style="width: 100%; height: auto; object-fit: cover;">
                 </div>
-                <div class="col-lg-5 col-sm-6 text-white justify-content-start align-text-center">
+                <div class="mt-2 col-lg-5 col-sm-6 text-white justify-content-start align-text-center">
                     <h1 th:text="${teacher.teacher.name}"></h1>
                     <p th:text="${teacher.teacher.description}" style="white-space: normal !important;"></p>
                     <strong>Netfang: </strong>
@@ -47,7 +47,7 @@
     <!-- /Content-->
 
     <!-- Footer -->
-    <div th:insert="/footer :: footer">
+    <div th:insert="footer :: footer">
 
     </div>
 
