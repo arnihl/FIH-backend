@@ -10,7 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" th:href="@{/css/bootstrap/bootstrap.css}">
-    <link rel="stylesheet" th:href="@{/css/umskolann.css}">
     <link rel="stylesheet" th:href="@{/css/footer.css}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script th:src="@{/js/bootstrap/bootstrap.js}"></script>
@@ -33,23 +32,13 @@
             <div class="row">
                 <div class="col">
 
-                    <img th:src="@{${'/img/kennarar/' + teacher.teacher.imgRef}}" alt="mynd af kennara" />
+                    <img th:src="@{${'/img/kennarar/' + teacher.teacher.imgRef}}" alt="mynd af kennara" style="width:100%; height: auto; object-fit: cover;"/>
                     <p th:text="${teacher.teacher.imgRef}"></p>
 
                 </div>
                 <div class="col">
                     <h4>Nafn</h4>
                     <p th:text="${teacher.teacher.name}"></p>
-                    <h4>Skammstöfun</h4>
-                    <p th:text="${teacher.teacher.abbreviation}"></p>
-                    <h4>lýsing</h4>
-                    <p th:text="${teacher.teacher.description}"></p>
-                    <h4>Símanúmer</h4>
-                    <p th:text="${teacher.teacher.phoneNumber}"></p>
-                    <h4>Netfang</h4>
-                    <p th:text="${teacher.teacher.email}"></p>
-                    <h4>Starfsgrein</h4>
-                    <p th:text="${teacher.teacher.profession}"></p>
 
                     <a th:href="@{${'/fih-admin/kennarar/change/' + teacher.id}}">Breyta kennara</a>
                 </div>
