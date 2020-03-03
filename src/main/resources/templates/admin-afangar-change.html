@@ -10,7 +10,9 @@
 </head>
 <body>
 <!--/*@thymesVar id="course" type=""*/-->
-<a href="/fih-admin/afangar">Til baka</a>
+<a class="btn border border-dark" href="/fih-admin/afangar">Til baka</a>
+<a class="btn border border-dark" th:href="@{${'/fih-admin/afangar/delete/' + realCourse.id}}" onclick="myFunc()">Eyða Áfanga</a>
+
 <form action="#" th:action="@{${'/fih-admin/afangar/change/' + realCourse.id}}" th:object="${course}" method="post">
     <div class="form-group">
         <label for="name">Nafn</label>
@@ -57,6 +59,10 @@
     </div>
     <input type="submit" value="Breyta Áfanga">
 </form>
-<a th:href="@{${'/fih-admin/afangar/delete/' + realCourse.id}}">Eyða Áfanga</a>
+<script>
+    function myFunc(){
+        confirm("Ertu viss um að þú viljir eyða áfanganum?");
+    }
+</script>
 </body>
 </html>

@@ -18,6 +18,8 @@ target/
 *.iws
 *.iml
 *.ipr
+application.properties
+hibernate.cfg.xml
 
 ### NetBeans ###
 /nbproject/private/

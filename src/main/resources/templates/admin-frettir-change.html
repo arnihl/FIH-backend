@@ -11,7 +11,7 @@
 <body>
 <!--/*@thymesVar id="teacher" type=""*/-->
 <a class="btn border border-dark" role="button" href="/fih-admin/frettir">Til baka</a>
-<a class="btn border border-dark" role="button" th:href="@{${'/fih-admin/frettir/delete/' + realStory.id}}">Eyða frétt</a>
+<a class="btn border border-dark" role="button" th:href="@{${'/fih-admin/frettir/delete/' + realStory.id}}" onclick="myFunc()">Eyða frétt</a>
 
 <div class="container">
     <div class="row flex-row">
@@ -54,5 +54,10 @@
         </div>
     </div>
 </div>
+<script>
+    function myFunc(){
+        confirm("Ertu viss um að þú viljir eyða fréttinni?");
+    }
+</script>
 </body>
 </html>
